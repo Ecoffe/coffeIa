@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #131314;
+    margin: 0;
+    padding: 0;
+    background-image: url(./assets/ico.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+#container {
+    width: 80%;
+    margin: 3px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #EE7214;
+}
+
+h3 {
+    color: #EE7214;
+}
+
+textarea[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 80%;
+    height: 50px;
+    max-height: 50px;
+    max-width: 80%;
+    padding: 20px;
+    background-color: #1e1f20;
+    border: 4px solid #131314;
+    border-radius: 15px 0px 0px 15px;
+    color: white;
+}
+
+select,
+button {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pergunta button {
+    background-size: 33px;
+    background-position: 11px;
+    background-color: #EE7214;
+    border-radius: 0px 15px 15px 0px;
+    color: #FFFFFF;
+    border: none;
+    height: 90px;
+    width: 55px;
+    background-image: url(./assets/enviado.png);
+    background-repeat: no-repeat;
+    transition: 500ms;
+}
+
+.pergunta button:hover {
+    background-color: #EFB661;
+}
+
+.titulo {
+    width: 90%;
+    display: flex;
+}
+
+.resposta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #131314;
+}
+
+#resposta {
+    width: 85%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #131314;
+    border: 1px solid #1e1f20;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    max-height: 405px;
+    display: none;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.pergunta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ia {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 35rem;
+}
+
+.perguntaIa {
+    display: flex;
+    align-items: center;
+}
+
+.perguntaIa img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.respostaIa img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.novo {
+    position: absolute;
+    top: 1px;
+    cursor: pointer;
+}
+
+.novo img {
+    width: 50px;
+    margin: 15px;
+}
+
+#verify {
+    display: flex;
+    height: 715px;
+    /* width: 100%; */
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 35rem;
+    height: 20rem;
+    border-radius: 25px;
+    background-color: #1e1f20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box p {
+    color: white;
+    font-size: 18px;
+}
+
+.box input {
+    width: 200px;
+    text-align: center;
+    font-size: 45px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.box button {
+    width: 150px;
+    border-radius: 15px;
+    height: 40px;
+    margin: 10px;
+    font-weight: 600;
+    transition: 500ms;
+}
+
+.box button:hover {
+    background-color: #EE7214;
+}

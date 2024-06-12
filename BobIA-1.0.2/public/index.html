@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="verify">
+        <div class="box">
+            <h1>Bem vindo ao CoffeIA</h1>
+            <p>Digite a senha para acessar</p>
+            <input type="password" id="senhaAdm">
+            <button onclick="verificar()">Entrar</button>
+        </div>
+    </div>
+    <div id="adm" style="display: none;">
+        <div class="novo" onclick="novoChat()">
+            <img src="./assets/add.png" alt="">
+        </div>
+        <div id="container">
+            <div class="titulo">
+                <h1>CoffeIA</h1>
+            </div>
+            <div class="ia">
+                <div class="pergunta">
+                    <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea>
+                    <button onclick="gerarResposta()"></button>
+                </div>
+                <div class="resposta">
+                    <div class="titulo">
+                        <h3>Resposta da IA:</h3>
+                    </div>
+                    <div id="resposta">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        async function gerarResposta() {
+            const pergunta = document.getElementById('pergunta').value;
+
+            const response = await fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+
+            resposta.style.display = 'block';
+            resposta.innerHTML += `
+            <div class="perguntaIa"><img src="./assets/you.png" alt=""><b>${pergunta}</b></div><br><br>
+            <div class="respostaIa"><img src="./assets/ia.png" alt="">${data.resultado}</div> <br>`;
+        }
+
+        pergunta.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Impede a quebra de linha
+                gerarResposta();
+                pergunta.value = '';
+            }
+        });
+
+        function novoChat() {
+            resposta.style.display = 'none';
+            resposta.innerHTML = ``;
+        }
+
+        function verificar(){
+            var senha = senhaAdm.value;
+
+            if (senha == 'ecoffe'){
+                verify.style.display = 'none'
+                adm.style.display = 'block'
+            }else{
+                alert("senha errada!")
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
