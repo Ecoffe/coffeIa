@@ -11,7 +11,7 @@ body {
 
 #container {
     width: 80%;
-    margin: 3px auto;
+    margin: 50px auto;
     text-align: center;
 }
 
@@ -85,7 +85,7 @@ button {
     color: white;
     font-size: 18px;
     text-align: left;
-    max-height: 405px;
+    max-height: 380px;
     display: none;
     overflow: scroll;
     overflow-x: hidden;
